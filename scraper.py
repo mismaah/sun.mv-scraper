@@ -97,7 +97,7 @@ def write_article(i):
 
 errors = []
 with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
-    futures = {executor.submit(write_article, i): i for i in range(145000, 146000)} 
+    futures = {executor.submit(write_article, i): i for i in range(1, 145846)} #145845 is the latest article as of 2020/11/21
     for future in concurrent.futures.as_completed(futures):
         try:
             data = future.result()
